@@ -117,4 +117,23 @@ public class Alignment {
 
         return;
     }
+
+    private static int misMatchPenalty(String rule1, String rule2) {
+        if (rule1 == null || rule2 == null) {
+            return Integer.MAX_VALUE;
+        }
+
+        int res = 0;
+
+        String[] tokens1 = rule1.split(" ");
+        String[] tokens2 = rule2.split(" ");
+
+        if (!tokens1[0].equals(tokens2) || !tokens1[1].equals(tokens2[1])) {
+            return Integer.MAX_VALUE;
+        }
+
+        
+
+        return res;
+    }
 }
